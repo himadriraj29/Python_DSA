@@ -11,5 +11,5 @@ def select(arr):
                 mini=j
         arr[i],arr[mini]=arr[mini],arr[i]
     print(arr)
-select([3,1,8,2])
+select([3,1,8,7,2])
                 
