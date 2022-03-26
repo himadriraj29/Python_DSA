@@ -48,5 +48,6 @@ def mergeSort(arr, l, r):
 
 if __name__ == "__main__":
     A=[5,6,2,3,1,9,4]
+    print(A)
     mergeSort(A,0,6)
     print(A)
