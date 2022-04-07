@@ -6,6 +6,6 @@ def maxSubArray(arr):
         maxi = max(arr[i],maxi+arr[i])
         res = max(maxi,res)
     return res
-arr = [1,3,-4,5,-6,8]
+arr = [8,-4,3,-5,4]
 ans = maxSubArray(arr)
 print(ans)
