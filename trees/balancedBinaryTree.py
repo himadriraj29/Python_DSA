@@ -20,6 +20,7 @@ def height(node):
     rh = height(node.right)
     return max(lh,rh) + 1
 
+#naive approach: complexity o(n2)
 def balancedBT(node):
     if node == None:
         return True
