@@ -40,9 +40,6 @@ def leftview(node):
     for i in range(1,n-1):
         if A[i] == None:
             print(A[i+1].data)
-
-
-
     return A
 
 
