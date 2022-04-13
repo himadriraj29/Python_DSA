@@ -3,7 +3,7 @@ def distinct(A):
     for i in A:
         if i not in dis:
             dis[i] = 0
-    return dis
+    return len(dis)
 
 
 if __name__ == "__main__":
