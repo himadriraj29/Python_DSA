@@ -1,17 +1,16 @@
-def zerosum(A,k):
+def zerosum(A):
     dis = {}
     sumi = 0
     for i in A:
         sumi += i
-        if sumi == k:
+        if sumi == 0:
             return True
-        if i - k in dis:
-            return True
-        else: 
-            dis[sumi] = 0   
+        if sumi in dis:
+            return True 
+        dis[sumi] = 0 
     return False
 
 
 if __name__ == "__main__":
-    ans = zerosum([-2,-3,-1,2,3,4,5,4],0)
+    ans = zerosum([2,-3,-1,2,3,-4,5,4])
     print(ans)
