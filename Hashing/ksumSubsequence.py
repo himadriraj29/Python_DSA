@@ -5,7 +5,7 @@ def ksum(A,k):
         sumi += i
         if sumi == k:
             return True
-        if i - k in dis:
+        if sumi - k in dis:
             return True
         else: 
             dis[sumi] = 0   
@@ -13,5 +13,5 @@ def ksum(A,k):
 
 
 if __name__ == "__main__":
-    ans = ksum([2,3,1,2,3,4,5,4],110)
+    ans = ksum([2,3,1,2,3,4,5,4],9)
     print(ans)
