@@ -36,7 +36,22 @@ def lca(node,n1,n2):
         i += 1
     return p1[i-1].data
     
+def lcaa(node,n1,n2):
+    if node == None:
+        return None
+    if node.data == n1 or node.data == n2:
+        return node
 
+    l = lcaa(node.left,n1,n2)
+    r = lcaa(node.right,n1,n2)
+
+    if l and r:
+        return node
+    if l != None:
+        return l
+    else:
+        return r       
+        
 if __name__ == "__main__":
     root = buildTree()
     #print(root)
@@ -48,7 +63,8 @@ if __name__ == "__main__":
     root.right = Node(3)
     '''
     p = []
-    ans = lca(root,2,3)
-    print(ans)
+    ans = lcaa(root,2,3)
+    print(ans.data)
+    
 
     #tree inorder used here [2 1 3]
