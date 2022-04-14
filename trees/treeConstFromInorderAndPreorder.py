@@ -18,7 +18,7 @@ def treeConst(ino,pre,s,e):
     if s > e:
         return None
     root = Node(pre[preidx])
-    preidx+=1
+    preidx += 1
     for i in range(s,e+1):
         if ino[i] == root.data:
             idx = i
