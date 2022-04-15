@@ -13,24 +13,30 @@ def buildTree():
     node.right = buildTree()
     return node
 
-def BTDL(node):
-    prev = Node(None)
-    head = Node(None)
-    if node == None:
-        return node
-    else:
-        head = BTDL(node.left)
-        if prev == None:
-            head = node
-        else:
-            node.left = prev
-            prev.right = node
-        prev = node
-        BTDL(node.right)
-    return head
 
+def serialization(node):
+    empty = -1
+    arr = []
+    if node == -1:
+        arr.append(empty)
+        return 
+    arr.append(node.data)
+    serialization(node.left)
+    serialization(node.right)
+    return arr
 
-
+def deserialize(arr):
+    idx = 0
+    if idx == len(arr):
+        retun None
+    val = arr.get(idx)
+    idx += 1
+    if val == empty:
+        return None
+    node= Node(val)
+    node.left = deserialize(arr)
+    node.right = deserialize(arr)
+    return node
 
 
 if __name__ == "__main__":
@@ -43,7 +49,6 @@ if __name__ == "__main__":
     root.left.right = Node(7)
     root.right = Node(3)
     '''
-    ans = BTDL(root)
+    ans = serialization(root)
     print(ans)
-
 
