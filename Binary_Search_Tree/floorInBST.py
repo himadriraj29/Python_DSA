@@ -14,11 +14,9 @@ def buildTree():
     return node
 
 def floorBST(node,key):
-    if node == None:
-        return None
-    res = 0
+    res = Node(None)
     while node != None:
-        if node == key:
+        if node.data == key:
             return key
         if node.data > key:
             node = node.left
@@ -39,6 +37,7 @@ if __name__ == "__main__":
     root.left.right = Node(7)
     root.right = Node(3)
     '''
-    ans = floorBST(root,4)
+    ans = floorBST(root,6)
     print(ans.data)
+    # tree: 5,3,7-inorder
 
