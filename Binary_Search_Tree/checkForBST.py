@@ -62,6 +62,24 @@ def checkBST_2(node,mini,maxi):
         return True
     return node.data < maxi and node.data > mini and checkBST_2(node.left,mini,node.data) and checkBST_2(node.right,node.data,maxi)
 
+#approach-3: best approach
+#we do the inorder traversal of tree
+#and check if the previous node is smaller or not
+prev = float('-inf')
+def checkBST_3(node):
+    global prev 
+    #prev = None
+    if node == None:
+        return True
+   # node = node.left
+    if checkBST_3(node.left) == False:
+        return False
+    if node.data <= prev:
+        return False
+    prev = node.data
+    return checkBST_3(node.right)
+
+
 if __name__ == "__main__":
     root = buildTree()
     #print(node)
@@ -74,5 +92,6 @@ if __name__ == "__main__":
     '''
     mini = float('-inf')
     maxi = float('inf')
-    ans = checkBST_2(root,mini,maxi)
+    #ans = checkBST_2(root,mini,maxi)
+    ans = checkBST_3(root)
     print(ans)
