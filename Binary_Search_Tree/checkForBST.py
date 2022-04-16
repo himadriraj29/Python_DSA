@@ -37,6 +37,10 @@ def maxi(node):
         res = rres
     return res
 
+#approach-1 : naive approach
+#find mini of right subtree
+#find max of left sub tree
+#node should be greater than max and smaller than minimum
 def checkBST_1(node):
     if node == None:
         return True
@@ -48,6 +52,16 @@ def checkBST_1(node):
         return False
     return True
 
+#approach-2 : better approach
+#pass a range for every node
+#for root range is -inf to +inf
+#for left child we change upper bound 
+#for right we change lower bound
+def checkBST_2(node,mini,maxi):
+    if node == None:
+        return True
+    return node.data < maxi and node.data > mini and checkBST_2(node.left,mini,node.data) and checkBST_2(node.right,node.data,maxi)
+
 if __name__ == "__main__":
     root = buildTree()
     #print(node)
@@ -58,5 +72,7 @@ if __name__ == "__main__":
     node.left.right = Node(7)
     node.right = Node(3)
     '''
-    ans = checkBST_1(root)
+    mini = float('-inf')
+    maxi = float('inf')
+    ans = checkBST_2(root,mini,maxi)
     print(ans)

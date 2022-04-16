@@ -1,3 +1,4 @@
+'''
 class Node:
     def __init__(self,data):
         self.left = None
@@ -30,13 +31,17 @@ def ceilbst(node,key):
 if __name__ == "__main__":
     root = buildTree()
     #print(root)
-    '''
+
     root = Node(1)
     root.left = Node(2)
     root.left.left = Node(8)
     root.left.right = Node(7)
     root.right = Node(3)
-    '''
+
     ans = ceilbst(root,4)
     print(ans.data)
 
+'''
+
+a = "abcde"
+print(a[-2:])
