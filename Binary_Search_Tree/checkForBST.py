@@ -64,7 +64,7 @@ def checkBST_2(node,mini,maxi):
 
 #approach-3: best approach
 #we do the inorder traversal of tree
-#and check if the previous node is smaller or not
+#and check if the previous node is smaller or  not
 prev = float('-inf')
 def checkBST_3(node):
     global prev 
