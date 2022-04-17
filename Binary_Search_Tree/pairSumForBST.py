@@ -22,7 +22,8 @@ def inorder(node,arr):
         arr.append(node.data)
         inorder(node.right,arr)
     return arr
-    
+
+#method-1: using two pointer approach    
 def pairsum(node,sumi):
     arr1 = []
     arr2 = inorder(node,arr1)
@@ -38,6 +39,19 @@ def pairsum(node,sumi):
             start += 1
     return False
 
+#method-2: using hashing
+def pairsum2(node,sumi):
+    arr1 = []
+    arr2 = inorder(node,arr1)
+    dis = {}
+    for i in arr2:
+        if sumi - i in dis:
+            print(i,sumi-i)
+            return True
+        elif i not in dis:
+            dis[i] = 0
+    return False
+
 if __name__ == "__main__":
     root = buildTree()
     #print(node)
@@ -49,5 +63,6 @@ if __name__ == "__main__":
     node.right = Node(3)
     '''
     arr = []
-    ans = pairsum(root,3)
+    #ans = pairsum(root,3)
+    ans = pairsum2(root,3)
     print(ans)
