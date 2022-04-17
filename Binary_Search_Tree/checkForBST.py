@@ -94,4 +94,4 @@ if __name__ == "__main__":
     maxi = float('inf')
     #ans = checkBST_2(root,mini,maxi)
     ans = checkBST_3(root)
-    print(ans)
+    print(ans[0].data,ans[1].data)
