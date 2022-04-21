@@ -29,7 +29,38 @@ def fixBST(node):
     fixBST(node.right)
     first,Second = Second,first
     return [first,Second]
-        
+
+#my method
+def inorder(node,arr):
+    if node == None:
+        return
+    inorder(node.left,arr)
+    arr.append(node.data)
+    inorder(node.right,arr)
+    return arr
+ 
+	# @param node : root node of tree
+	# @return a list of integers
+
+def recoverTree(node):
+    first = 0
+    second = 0
+    ans = []
+    arr1 = inorder(node,arr) 
+    n = len(arr1)
+    for i in range(1,n):
+        count = 0
+        if arr1[i-1] > arr1[i]:
+            first = arr1[i-1]
+            break
+        count += 1
+    for i in range(count,n):
+        if arr1[i] < arr1[i-1]:
+            second = arr1[i]
+    #first,second = second,first
+    ans.append(first)
+    ans.append(second)
+    return ans
 
 if __name__ == "__main__":
     root = buildTree()
