@@ -24,7 +24,7 @@ def inorder(node,arr):
  
 	# @param node : root node of tree
 	# @return a list of integers
-
+#recovering binary tree
 def recoverTree(node):
     first = 0
     second = 0
@@ -45,6 +45,32 @@ def recoverTree(node):
     ans.append(second)
     return ans
 
+#finding lca
+def path(node,p,key):
+    if node == None:
+        return False
+    p.append(node.data)
+    if node.data == key:
+        return True
+    if (node.left != None and path(node.left,p,key)) or (node.right != None and path(node.right,p,key)):
+        return True
+    p.pop()
+    return False
+
+def lca(node,n1,n2):
+    p1 = []
+    p2 = []
+    if not path(node,p1,n1) or not path(node,p2,n2):
+        return -1
+    i = 0
+    while i < len(p1) and i < len(p2):
+        if p1[i] != p2[i]:
+            break
+        i += 1
+    return p1[i-1]
+
+#zig zag traversal
+
 if __name__ == "__main__":
     root = buildTree()
     #print(node)
@@ -58,7 +84,7 @@ if __name__ == "__main__":
     arr = []
     #ans = pairsum(root,3)
     #ans = inorder(root,arr)
-    ans = recoverTree(root)
+    ans = lca(root,1,3)
     print(ans)
 
 
