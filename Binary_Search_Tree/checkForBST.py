@@ -39,7 +39,7 @@ def maxi(node):
 
 #approach-1 : naive approach
 #find mini of right subtree
-#find max of left sub tree
+#find maxi of left sub tree
 #node should be greater than max and smaller than minimum
 def checkBST_1(node):
     if node == None:
