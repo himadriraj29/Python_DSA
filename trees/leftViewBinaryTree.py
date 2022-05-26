@@ -12,7 +12,7 @@ def buildTree():
     node.left = buildTree()
     node.right = buildTree()
     return node
-
+'''
 def leftview(node):
     A = []
     s = -1
@@ -41,7 +41,34 @@ def leftview(node):
         if A[i] == None:
             print(A[i+1].data)
     return A
-
+'''
+def leftview2(node):
+    A = []
+    s = -1
+    e = -1
+    A.append(node)
+    A.append(None)
+    s += 1
+    e += 2
+    while s < e:
+        curr = A[s]
+        s += 1
+        if curr == None:
+            A.append(None)
+            e += 1
+        else:
+            if curr.left != None:
+                A.append(curr.left)
+                e += 1
+            if curr.right != None:
+                A.append(curr.right)
+                e += 1
+    n = len(A)
+    print(A[0].data)
+    for i in range(1,n-1):
+        if A[i] == None:
+            print(A[i+1].data)
+    return A
 
 
 if __name__ == "__main__":
@@ -54,4 +81,5 @@ if __name__ == "__main__":
     root.left.right = Node(7)
     root.right = Node(3)
     '''
-    ans = leftview(root)
+    ans = leftview2(root)
+    #print(ans)
