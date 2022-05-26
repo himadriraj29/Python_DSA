@@ -21,6 +21,12 @@ def size(node):
         r = size(node.right)
         return l+r+1
 
+def size2(node):
+    if node == None:
+        return 0
+    l = size2(node.left)
+    r = size2(node.right)
+    return l+r+1
 
 
 if __name__ == "__main__":
@@ -33,5 +39,5 @@ if __name__ == "__main__":
     root.left.right = Node(7)
     root.right = Node(3)
     '''
-    ans = size(root)
+    ans = size2(root)
     print(ans)
