@@ -32,9 +32,9 @@ def levelorder(node):
             e += 1
     return A
 '''
-def levelorder2(node):
-    A = []
-    s = -1
+def levelorder2(node):   #here two pointers s and e has been taken
+    A = []              #we print the left and right chuld of s and after printing it we increase s 
+    s = -1             #we increment e everytime we add a node in array
     e = -1
     A.append(node)
     s = 0
@@ -42,7 +42,7 @@ def levelorder2(node):
     while s <= e:
         curr = A[s]
         s += 1
-        print(curr.data)
+        print(curr.data)  # we have put to print the values inside the node.
         if curr.left != None:
             A.append(curr.left)
             e += 1
