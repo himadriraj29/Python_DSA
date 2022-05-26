@@ -12,7 +12,7 @@ def buildTree():
     node.left = buildTree()
     node.right = buildTree()
     return node
-
+'''
 def levelorder(node):
     A = []
     s = -1
@@ -20,6 +20,25 @@ def levelorder(node):
     A.append(node)
     s += 1
     e += 1
+    while s <= e:
+        curr = A[s]
+        s += 1
+        print(curr.data)
+        if curr.left != None:
+            A.append(curr.left)
+            e += 1
+        if curr.right != None:
+            A.append(curr.right)
+            e += 1
+    return A
+'''
+def levelorder2(node):
+    A = []
+    s = -1
+    e = -1
+    A.append(node)
+    s = 0
+    e = 0
     while s <= e:
         curr = A[s]
         s += 1
@@ -44,5 +63,5 @@ if __name__ == "__main__":
     root.left.right = Node(7)
     root.right = Node(3)
     '''
-    ans = levelorder(root)
+    ans = levelorder2(root)
     print(ans)
