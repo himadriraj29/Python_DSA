@@ -29,6 +29,22 @@ def BTDL(node):
         BTDL(node.right)
     return head
 
+def btdl(node):
+    prev = Node(None)
+    head = Node(None)
+    if node == None:
+        return node
+    else:
+        head = btdl(node.left)
+        if prev == None:
+            head = node
+        else:
+            node.left = prev
+            prev.right = node
+        prev = node
+        btdl(node.right)
+    return head
+
 
 
 
@@ -43,7 +59,7 @@ if __name__ == "__main__":
     root.left.right = Node(7)
     root.right = Node(3)
     '''
-    ans = BTDL(root)
+    ans = btdl(root)
     print(ans)
 
 
