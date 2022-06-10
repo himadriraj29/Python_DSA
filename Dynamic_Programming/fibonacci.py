@@ -1,7 +1,5 @@
 def fiboDP(n):
     memo = [-1 for i in range(n+1)]
-    #for i in range(n+2):
-        #memo[i].append(-1)
     if memo[n] == -1:
         res = 0
         if n == 0 or n == 1:
