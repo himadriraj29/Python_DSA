@@ -10,7 +10,7 @@
 #if we see an adjacent which is visited but it is there in the 
 #recursive array then we return true . i.e, cycle exists
 
-#METHOD 2: using Topological sort
+#METHOD 2: using Topological sort(BFS based)
 #while doing the topological sort, there comes a point when the indegree of vertices
 #are not zero, they cannot be pushed into the queue, therefore in this way, it detects a cycle
 #so here, we make a count variable, and increase its count everytime we pop an element from queue

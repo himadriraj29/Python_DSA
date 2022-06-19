@@ -1,4 +1,5 @@
-#TOPOLOGICAL SORT
+#TOPOLOGICAL SORT 
+#using BFS
 #find indegree of every vertices
 #indegree is the no of edges coming on a node
 #     A(0)    D(0)   edges are from A to B, A to C, D to C and D to E
@@ -11,3 +12,9 @@
 #Again push all the element into the queue having indegree = 0, and reduce indegree of the adjecent element by 1
 #repeat these steps until every element is processed.
 #ans = [A,D,B,E,C]
+
+
+#TOPOLOGICAL SORT (DFS based)
+#make a stack, now make a recursive call for the node
+#we we push the node only when all the adjecent nodes are pushed into the stack
+#now pop the stack to ans array.

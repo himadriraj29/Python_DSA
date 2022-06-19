@@ -46,9 +46,6 @@ def btdl(node):
     return head
 
 
-
-
-
 if __name__ == "__main__":
     root = buildTree()
     #print(root)
